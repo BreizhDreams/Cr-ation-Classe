@@ -158,7 +158,7 @@
             // lblListeVariables
             // 
             this.lblListeVariables.AutoSize = true;
-            this.lblListeVariables.Location = new System.Drawing.Point(527, 235);
+            this.lblListeVariables.Location = new System.Drawing.Point(498, 235);
             this.lblListeVariables.Name = "lblListeVariables";
             this.lblListeVariables.Size = new System.Drawing.Size(145, 13);
             this.lblListeVariables.TabIndex = 13;
@@ -167,14 +167,14 @@
             // cmbBoxListeVariables
             // 
             this.cmbBoxListeVariables.FormattingEnabled = true;
-            this.cmbBoxListeVariables.Location = new System.Drawing.Point(530, 251);
+            this.cmbBoxListeVariables.Location = new System.Drawing.Point(501, 251);
             this.cmbBoxListeVariables.Name = "cmbBoxListeVariables";
-            this.cmbBoxListeVariables.Size = new System.Drawing.Size(191, 21);
+            this.cmbBoxListeVariables.Size = new System.Drawing.Size(246, 21);
             this.cmbBoxListeVariables.TabIndex = 14;
             // 
             // btnSuppVar
             // 
-            this.btnSuppVar.Location = new System.Drawing.Point(644, 278);
+            this.btnSuppVar.Location = new System.Drawing.Point(670, 278);
             this.btnSuppVar.Name = "btnSuppVar";
             this.btnSuppVar.Size = new System.Drawing.Size(77, 21);
             this.btnSuppVar.TabIndex = 15;
@@ -216,7 +216,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(527, 176);
+            this.label3.Location = new System.Drawing.Point(498, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 13);
             this.label3.TabIndex = 19;
@@ -234,7 +234,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(527, 199);
+            this.label10.Location = new System.Drawing.Point(498, 199);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(134, 13);
             this.label10.TabIndex = 23;
@@ -251,7 +251,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(527, 305);
+            this.label4.Location = new System.Drawing.Point(498, 305);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(156, 13);
             this.label4.TabIndex = 25;
@@ -260,14 +260,14 @@
             // cmbBoxListeGetterSetter
             // 
             this.cmbBoxListeGetterSetter.FormattingEnabled = true;
-            this.cmbBoxListeGetterSetter.Location = new System.Drawing.Point(530, 321);
+            this.cmbBoxListeGetterSetter.Location = new System.Drawing.Point(501, 322);
             this.cmbBoxListeGetterSetter.Name = "cmbBoxListeGetterSetter";
-            this.cmbBoxListeGetterSetter.Size = new System.Drawing.Size(191, 21);
+            this.cmbBoxListeGetterSetter.Size = new System.Drawing.Size(246, 21);
             this.cmbBoxListeGetterSetter.TabIndex = 26;
             // 
             // btnDeleteGetterSetter
             // 
-            this.btnDeleteGetterSetter.Location = new System.Drawing.Point(644, 349);
+            this.btnDeleteGetterSetter.Location = new System.Drawing.Point(670, 349);
             this.btnDeleteGetterSetter.Name = "btnDeleteGetterSetter";
             this.btnDeleteGetterSetter.Size = new System.Drawing.Size(77, 21);
             this.btnDeleteGetterSetter.TabIndex = 27;
@@ -279,7 +279,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(530, 93);
+            this.label7.Location = new System.Drawing.Point(501, 93);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(212, 16);
