@@ -18,15 +18,18 @@ namespace Création_Classe
         public Form2(List<string> laListe)
         {
             InitializeComponent();
-            
+            codeLines = laListe;
+
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
-            foreach(string codeLine in codeLines)
+            richTextBox1.Multiline = true;
+            foreach (string line in codeLines)
             {
-                textBox1.Text = string.Join(Environment.NewLine,codeLine);
+                richTextBox1.AppendText(Environment.NewLine + line);
             }
         }
+
     }
 }

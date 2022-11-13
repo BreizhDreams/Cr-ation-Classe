@@ -36,7 +36,7 @@ namespace Création_Classe
 
         public string CreateGetterSetter(string nameVar, string typeVar)
         {
-            string getters_setter = "public " + typeVar + " " + CapitalizeFirstLetter(nameVar) +" { get => "+nameVar+"; set => "+nameVar + "= value; }";
+            string getters_setter = "public " + typeVar + " " + CapitalizeFirstLetter(nameVar) +" { get => _"+nameVar+"; set => _"+nameVar + "= value; }";
             return getters_setter;
         }
         public string CreateRegion()
