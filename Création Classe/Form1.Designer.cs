@@ -42,7 +42,7 @@
             this.lblListeVariables = new System.Windows.Forms.Label();
             this.cmbBoxListeVariables = new System.Windows.Forms.ComboBox();
             this.btnSuppVar = new System.Windows.Forms.Button();
-            this.checkBoxGetterSetter = new System.Windows.Forms.CheckBox();
+            this.checkBoxGetter = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +53,15 @@
             this.cmbBoxListeGetterSetter = new System.Windows.Forms.ComboBox();
             this.btnDeleteGetterSetter = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblClasseExistante = new System.Windows.Forms.Label();
+            this.txtBoxClasseExistante = new System.Windows.Forms.TextBox();
+            this.checkBoxSetter = new System.Windows.Forms.CheckBox();
+            this.checkBoxUsing = new System.Windows.Forms.CheckBox();
+            this.btnClasseExistante = new System.Windows.Forms.Button();
+            this.checkBoxList = new System.Windows.Forms.CheckBox();
+            this.checkBoxDictionnaire = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmbBoxDictionnaire = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblTitre
@@ -68,7 +77,7 @@
             // lblNomClasse
             // 
             this.lblNomClasse.AutoSize = true;
-            this.lblNomClasse.Location = new System.Drawing.Point(40, 176);
+            this.lblNomClasse.Location = new System.Drawing.Point(42, 145);
             this.lblNomClasse.Name = "lblNomClasse";
             this.lblNomClasse.Size = new System.Drawing.Size(98, 13);
             this.lblNomClasse.TabIndex = 1;
@@ -76,16 +85,16 @@
             // 
             // txtBoxNomClasse
             // 
-            this.txtBoxNomClasse.Location = new System.Drawing.Point(43, 192);
+            this.txtBoxNomClasse.Location = new System.Drawing.Point(43, 169);
             this.txtBoxNomClasse.Name = "txtBoxNomClasse";
-            this.txtBoxNomClasse.Size = new System.Drawing.Size(119, 20);
+            this.txtBoxNomClasse.Size = new System.Drawing.Size(140, 20);
             this.txtBoxNomClasse.TabIndex = 2;
             this.txtBoxNomClasse.TextChanged += new System.EventHandler(this.txtBoxNomClasse_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(269, 176);
+            this.label1.Location = new System.Drawing.Point(262, 145);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 3;
@@ -97,14 +106,14 @@
             this.btnCreateClass.Name = "btnCreateClass";
             this.btnCreateClass.Size = new System.Drawing.Size(104, 37);
             this.btnCreateClass.TabIndex = 4;
-            this.btnCreateClass.Text = "Créer le Fichier";
+            this.btnCreateClass.Text = "Générer le Code";
             this.btnCreateClass.UseVisualStyleBackColor = true;
             this.btnCreateClass.Click += new System.EventHandler(this.btnCreateClass_Click);
             // 
             // checkBoxRegion
             // 
             this.checkBoxRegion.AutoSize = true;
-            this.checkBoxRegion.Location = new System.Drawing.Point(45, 235);
+            this.checkBoxRegion.Location = new System.Drawing.Point(45, 253);
             this.checkBoxRegion.Name = "checkBoxRegion";
             this.checkBoxRegion.Size = new System.Drawing.Size(122, 17);
             this.checkBoxRegion.TabIndex = 5;
@@ -114,7 +123,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(269, 235);
+            this.label2.Location = new System.Drawing.Point(262, 259);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 13);
             this.label2.TabIndex = 6;
@@ -132,7 +141,7 @@
             // 
             // txtBoxNomAttribut
             // 
-            this.txtBoxNomAttribut.Location = new System.Drawing.Point(272, 192);
+            this.txtBoxNomAttribut.Location = new System.Drawing.Point(265, 169);
             this.txtBoxNomAttribut.Name = "txtBoxNomAttribut";
             this.txtBoxNomAttribut.Size = new System.Drawing.Size(124, 20);
             this.txtBoxNomAttribut.TabIndex = 9;
@@ -140,14 +149,14 @@
             // cmbBoxListeType
             // 
             this.cmbBoxListeType.FormattingEnabled = true;
-            this.cmbBoxListeType.Location = new System.Drawing.Point(272, 251);
+            this.cmbBoxListeType.Location = new System.Drawing.Point(265, 279);
             this.cmbBoxListeType.Name = "cmbBoxListeType";
             this.cmbBoxListeType.Size = new System.Drawing.Size(121, 21);
             this.cmbBoxListeType.TabIndex = 11;
             // 
             // btnAddVar
             // 
-            this.btnAddVar.Location = new System.Drawing.Point(272, 339);
+            this.btnAddVar.Location = new System.Drawing.Point(269, 388);
             this.btnAddVar.Name = "btnAddVar";
             this.btnAddVar.Size = new System.Drawing.Size(121, 23);
             this.btnAddVar.TabIndex = 12;
@@ -182,15 +191,15 @@
             this.btnSuppVar.UseVisualStyleBackColor = true;
             this.btnSuppVar.Click += new System.EventHandler(this.btnSuppVar_Click);
             // 
-            // checkBoxGetterSetter
+            // checkBoxGetter
             // 
-            this.checkBoxGetterSetter.AutoSize = true;
-            this.checkBoxGetterSetter.Location = new System.Drawing.Point(45, 321);
-            this.checkBoxGetterSetter.Name = "checkBoxGetterSetter";
-            this.checkBoxGetterSetter.Size = new System.Drawing.Size(145, 17);
-            this.checkBoxGetterSetter.TabIndex = 16;
-            this.checkBoxGetterSetter.Text = "Génerer les Getter/Setter";
-            this.checkBoxGetterSetter.UseVisualStyleBackColor = true;
+            this.checkBoxGetter.AutoSize = true;
+            this.checkBoxGetter.Location = new System.Drawing.Point(268, 339);
+            this.checkBoxGetter.Name = "checkBoxGetter";
+            this.checkBoxGetter.Size = new System.Drawing.Size(107, 17);
+            this.checkBoxGetter.TabIndex = 16;
+            this.checkBoxGetter.Text = "Génerer le Getter";
+            this.checkBoxGetter.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -245,8 +254,9 @@
             this.lblNomClasseChoisi.AutoSize = true;
             this.lblNomClasseChoisi.Location = new System.Drawing.Point(710, 176);
             this.lblNomClasseChoisi.Name = "lblNomClasseChoisi";
-            this.lblNomClasseChoisi.Size = new System.Drawing.Size(0, 13);
+            this.lblNomClasseChoisi.Size = new System.Drawing.Size(37, 13);
             this.lblNomClasseChoisi.TabIndex = 24;
+            this.lblNomClasseChoisi.Text = "leNom";
             // 
             // label4
             // 
@@ -286,11 +296,104 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "CONFIGURATION ACTUELLE";
             // 
+            // lblClasseExistante
+            // 
+            this.lblClasseExistante.AutoSize = true;
+            this.lblClasseExistante.Location = new System.Drawing.Point(42, 310);
+            this.lblClasseExistante.Name = "lblClasseExistante";
+            this.lblClasseExistante.Size = new System.Drawing.Size(143, 13);
+            this.lblClasseExistante.TabIndex = 29;
+            this.lblClasseExistante.Text = "Ajout d\'une Classe Existante:";
+            // 
+            // txtBoxClasseExistante
+            // 
+            this.txtBoxClasseExistante.Location = new System.Drawing.Point(43, 339);
+            this.txtBoxClasseExistante.Name = "txtBoxClasseExistante";
+            this.txtBoxClasseExistante.Size = new System.Drawing.Size(140, 20);
+            this.txtBoxClasseExistante.TabIndex = 30;
+            // 
+            // checkBoxSetter
+            // 
+            this.checkBoxSetter.AutoSize = true;
+            this.checkBoxSetter.Location = new System.Drawing.Point(269, 362);
+            this.checkBoxSetter.Name = "checkBoxSetter";
+            this.checkBoxSetter.Size = new System.Drawing.Size(106, 17);
+            this.checkBoxSetter.TabIndex = 31;
+            this.checkBoxSetter.Text = "Génerer le Setter";
+            this.checkBoxSetter.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxUsing
+            // 
+            this.checkBoxUsing.AutoSize = true;
+            this.checkBoxUsing.Location = new System.Drawing.Point(45, 230);
+            this.checkBoxUsing.Name = "checkBoxUsing";
+            this.checkBoxUsing.Size = new System.Drawing.Size(115, 17);
+            this.checkBoxUsing.TabIndex = 32;
+            this.checkBoxUsing.Text = "Génerer les Usings";
+            this.checkBoxUsing.UseVisualStyleBackColor = true;
+            // 
+            // btnClasseExistante
+            // 
+            this.btnClasseExistante.Location = new System.Drawing.Point(43, 374);
+            this.btnClasseExistante.Name = "btnClasseExistante";
+            this.btnClasseExistante.Size = new System.Drawing.Size(140, 37);
+            this.btnClasseExistante.TabIndex = 33;
+            this.btnClasseExistante.Text = "Ajouter la Classe Aux Types Possibles";
+            this.btnClasseExistante.UseVisualStyleBackColor = true;
+            this.btnClasseExistante.Click += new System.EventHandler(this.btnClasseExistante_Click);
+            // 
+            // checkBoxList
+            // 
+            this.checkBoxList.AutoSize = true;
+            this.checkBoxList.Location = new System.Drawing.Point(268, 215);
+            this.checkBoxList.Name = "checkBoxList";
+            this.checkBoxList.Size = new System.Drawing.Size(75, 17);
+            this.checkBoxList.TabIndex = 34;
+            this.checkBoxList.Text = "Type : List";
+            this.checkBoxList.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDictionnaire
+            // 
+            this.checkBoxDictionnaire.AutoSize = true;
+            this.checkBoxDictionnaire.Location = new System.Drawing.Point(268, 236);
+            this.checkBoxDictionnaire.Name = "checkBoxDictionnaire";
+            this.checkBoxDictionnaire.Size = new System.Drawing.Size(115, 17);
+            this.checkBoxDictionnaire.TabIndex = 35;
+            this.checkBoxDictionnaire.Text = "Type : Dictionnaire";
+            this.checkBoxDictionnaire.UseVisualStyleBackColor = true;
+            this.checkBoxDictionnaire.CheckedChanged += new System.EventHandler(this.checkBoxDictionnaire_CheckedChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(266, 199);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 13);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "Collections :";
+            // 
+            // cmbBoxDictionnaire
+            // 
+            this.cmbBoxDictionnaire.FormattingEnabled = true;
+            this.cmbBoxDictionnaire.Location = new System.Drawing.Point(265, 306);
+            this.cmbBoxDictionnaire.Name = "cmbBoxDictionnaire";
+            this.cmbBoxDictionnaire.Size = new System.Drawing.Size(121, 21);
+            this.cmbBoxDictionnaire.TabIndex = 37;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbBoxDictionnaire);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.checkBoxDictionnaire);
+            this.Controls.Add(this.checkBoxList);
+            this.Controls.Add(this.btnClasseExistante);
+            this.Controls.Add(this.checkBoxUsing);
+            this.Controls.Add(this.checkBoxSetter);
+            this.Controls.Add(this.txtBoxClasseExistante);
+            this.Controls.Add(this.lblClasseExistante);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnDeleteGetterSetter);
             this.Controls.Add(this.cmbBoxListeGetterSetter);
@@ -301,7 +404,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.checkBoxGetterSetter);
+            this.Controls.Add(this.checkBoxGetter);
             this.Controls.Add(this.btnSuppVar);
             this.Controls.Add(this.cmbBoxListeVariables);
             this.Controls.Add(this.lblListeVariables);
@@ -340,7 +443,7 @@
         private System.Windows.Forms.Label lblListeVariables;
         private System.Windows.Forms.ComboBox cmbBoxListeVariables;
         private System.Windows.Forms.Button btnSuppVar;
-        private System.Windows.Forms.CheckBox checkBoxGetterSetter;
+        private System.Windows.Forms.CheckBox checkBoxGetter;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
@@ -351,6 +454,15 @@
         private System.Windows.Forms.ComboBox cmbBoxListeGetterSetter;
         private System.Windows.Forms.Button btnDeleteGetterSetter;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblClasseExistante;
+        private System.Windows.Forms.TextBox txtBoxClasseExistante;
+        private System.Windows.Forms.CheckBox checkBoxSetter;
+        private System.Windows.Forms.CheckBox checkBoxUsing;
+        private System.Windows.Forms.Button btnClasseExistante;
+        private System.Windows.Forms.CheckBox checkBoxList;
+        private System.Windows.Forms.CheckBox checkBoxDictionnaire;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbBoxDictionnaire;
     }
 }
 
