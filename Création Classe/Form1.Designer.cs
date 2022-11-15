@@ -60,6 +60,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cmbBoxDictionnaire = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitre
@@ -277,15 +278,15 @@
             // lblClasseExistante
             // 
             this.lblClasseExistante.AutoSize = true;
-            this.lblClasseExistante.Location = new System.Drawing.Point(42, 259);
+            this.lblClasseExistante.Location = new System.Drawing.Point(42, 314);
             this.lblClasseExistante.Name = "lblClasseExistante";
-            this.lblClasseExistante.Size = new System.Drawing.Size(79, 13);
+            this.lblClasseExistante.Size = new System.Drawing.Size(102, 13);
             this.lblClasseExistante.TabIndex = 29;
-            this.lblClasseExistante.Text = "Nom Du Type :";
+            this.lblClasseExistante.Text = "Type Déja Existant :";
             // 
             // txtBoxClasseExistante
             // 
-            this.txtBoxClasseExistante.Location = new System.Drawing.Point(43, 280);
+            this.txtBoxClasseExistante.Location = new System.Drawing.Point(43, 339);
             this.txtBoxClasseExistante.Name = "txtBoxClasseExistante";
             this.txtBoxClasseExistante.Size = new System.Drawing.Size(140, 20);
             this.txtBoxClasseExistante.TabIndex = 30;
@@ -302,7 +303,7 @@
             // 
             // btnClasseExistante
             // 
-            this.btnClasseExistante.Location = new System.Drawing.Point(43, 313);
+            this.btnClasseExistante.Location = new System.Drawing.Point(43, 374);
             this.btnClasseExistante.Name = "btnClasseExistante";
             this.btnClasseExistante.Size = new System.Drawing.Size(140, 37);
             this.btnClasseExistante.TabIndex = 33;
@@ -359,11 +360,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(42, 278);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(144, 16);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "NOUVEAUX TYPES";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cmbBoxDictionnaire);
             this.Controls.Add(this.label8);
@@ -438,6 +450,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbBoxDictionnaire;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
     }
 }
 

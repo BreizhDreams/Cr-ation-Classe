@@ -10,9 +10,10 @@ namespace Création_Classe
     {
         #region Attribut
         private List<string> _collType = new List<string>();
-        private List<string> _collVariables = new List<string>();
+        private Dictionary<string,string> _collVariables = new Dictionary<string, string>();
         private List<string> _collGetSet = new List<string>();
-
+        private string nameClass;
+        private List<string> _collAttributFinal = new List<string>();
         #endregion
 
         #region Constructeur
@@ -24,8 +25,13 @@ namespace Création_Classe
 
         #region Getter Setter
         public List<string> CollType { get => _collType; set => _collType = value; }
-        public List<string> CollVariables { get => _collVariables; set => _collVariables = value; }
         public List<string> CollGetSet { get => _collGetSet; set => _collGetSet = value; }
+        public Dictionary<string, string> CollVariables { get => _collVariables; set => _collVariables = value; }
+        public string NameClass { get => nameClass; set => nameClass = value; }
+        public List<string> CollAttributFinal { get => _collAttributFinal; set => _collAttributFinal = value; }
+
+
+
 
         #endregion
 
@@ -82,7 +88,34 @@ namespace Création_Classe
         //Ajout du Constructeur
         public string CreateConstructeur(string nameClasse)
         {
-            string constructeur = "public " + nameClasse + "() {}";
+            string param = "";
+            string affectation = "\n";
+            
+            foreach(KeyValuePair<string,string> laVar in CollVariables)
+            {
+                if((laVar.Value.Contains("List")|| laVar.Value.Contains("Dictionary")) && laVar.Value.Contains(nameClasse)){
+                    affectation = affectation+ "    _"+laVar.Key+"= new List<"+nameClass+">();\n";
+                }
+                else if((laVar.Value.Contains("List") || laVar.Value.Contains("Dictionary")) && !laVar.Value.Contains(nameClasse)){
+                    affectation = affectation + "    " + laVar.Key + ".Add(this);\n";
+                }
+                else
+                {
+                    
+                    if (CollVariables[laVar.Key] == CollVariables.Values.Last())
+                    {
+                        param = param + laVar.Value + " " + laVar.Key;
+                    }
+                    else
+                    {
+                        param = param + laVar.Value + " " + laVar.Key + ",";
+                    }
+
+                    affectation = affectation + "    this._" + laVar.Key + " = "+laVar.Key+";\n";
+                }
+                
+            }
+            string constructeur = CreateRegion("Constructeur")+"\n\n public " + nameClasse + "("+param+") {"+affectation+"}\n\n" + CreateEndRegion();
             return constructeur;
         }
 
@@ -130,9 +163,9 @@ namespace Création_Classe
         // Vérification si l'utilisateur à saisie un variable déja Existante
         public bool CheckVarExistante(string laVariable)
         {
-            foreach(string laVar in CollVariables)
+            foreach(KeyValuePair<string,string> laVar in CollVariables)
             {
-                if(laVar.ToLower() == laVariable.ToLower())
+                if(laVar.Key == laVariable.ToLower())
                 {
                     return true;
                 }
@@ -151,6 +184,30 @@ namespace Création_Classe
                 }
             }
             return false;
+        }
+
+
+        public string CreateAttributs()
+        {
+            string attribut = CreateRegion("Attribut")+"\n";
+            foreach(string lAttribut in CollAttributFinal)
+            {
+                if(lAttribut.Contains("List") && lAttribut.Contains(nameClass))
+                {
+                    foreach(KeyValuePair<string,string> element in CollVariables)
+                    {
+                        if (lAttribut.Contains("_"+element.Key.ToLower())){
+                            attribut = attribut + "    public static List<" + nameClass + "> "+element.Key+";\n";
+                        }
+                    }
+
+                }
+                else
+                {
+                    attribut = attribut + "    " + lAttribut + "\n";
+                }
+            }
+            return attribut + CreateEndRegion()+"\n";
         }
     }
 

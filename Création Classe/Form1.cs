@@ -57,6 +57,7 @@ namespace Création_Classe
         // Ajout de la Variables avec les configurations choisis par l'utilisateur (Getter / Setter)
         private void btnAddVar_Click(object sender, EventArgs e)
         {
+            laStructure.NameClass = txtBoxNomClasse.Text;
             bool varExistante = laStructure.CheckVarExistante(txtBoxNomAttribut.Text);
             string ligneVar, leGetterSetter;
             string nameVar = "_" + txtBoxNomAttribut.Text.ToLower();
@@ -72,20 +73,26 @@ namespace Création_Classe
             }
             else
             {
+                
                 if (checkBoxList.Checked && cmbBoxListeType.SelectedItem != null)
                 {
+                    if(:)
                     ligneVar = "private " + laStructure.CreateList(nameVar, cmbBoxListeType.SelectedItem.ToString());
+                    laStructure.CollVariables.Add(txtBoxNomAttribut.Text, "List<"+cmbBoxListeType.SelectedItem.ToString() +">");
 
                 }
                 else if (checkBoxDictionnaire.Checked && cmbBoxListeType.SelectedItem != null && cmbBoxDictionnaire.SelectedItem != null)
                 {
                     ligneVar = "private " + laStructure.CreateDictionnary(nameVar, cmbBoxListeType.SelectedItem.ToString(), cmbBoxDictionnaire.SelectedItem.ToString());
+                    laStructure.CollVariables.Add(txtBoxNomAttribut.Text, "Dictionary<" + cmbBoxListeType.SelectedItem.ToString() +","+cmbBoxDictionnaire.SelectedItem.ToString()+ ">");
                 }
                 else
                 {
                     ligneVar = "private " + cmbBoxListeType.SelectedItem.ToString() + " " + nameVar + ";";
+                    laStructure.CollVariables.Add(txtBoxNomAttribut.Text, cmbBoxListeType.SelectedItem.ToString());
                 }
                 cmbBoxListeVariables.Items.Add(ligneVar);
+                laStructure.CollAttributFinal.Add(ligneVar);
                 if (checkBoxDictionnaire.Checked)
                 {
                     leGetterSetter = laStructure.CreateGetterSetter(txtBoxNomAttribut.Text, cmbBoxListeType.SelectedItem.ToString(), checkBoxGetter.Checked, checkBoxSetter.Checked, checkBoxList.Checked, checkBoxDictionnaire.Checked, cmbBoxDictionnaire.SelectedItem.ToString());
@@ -98,7 +105,6 @@ namespace Création_Classe
                 {
                     cmbBoxListeGetterSetter.Items.Add(leGetterSetter);
                 }
-                laStructure.CollVariables.Add(txtBoxNomAttribut.Text);
                 lblNombreVariable.Text = cmbBoxListeVariables.Items.Count.ToString();
 
             }
@@ -120,11 +126,11 @@ namespace Création_Classe
                 string laVarAEnlever = cmbBoxListeVariables.SelectedItem.ToString();
                 cmbBoxListeVariables.Items.Remove(cmbBoxListeVariables.SelectedItem.ToString());
                 lblNombreVariable.Text = cmbBoxListeVariables.Items.Count.ToString();
-                foreach(string laVar in laStructure.CollVariables)
+                foreach(KeyValuePair<string,string> laVar in laStructure.CollVariables)
                 {
-                    if (laVarAEnlever.Contains(laVar))
+                    if (laVarAEnlever.Contains(laVar.Key))
                     {
-                        laStructure.CollVariables.Remove(laVar);
+                        laStructure.CollVariables.Remove(laVar.Key);
                         break;
                     }
                 }
@@ -213,30 +219,27 @@ namespace Création_Classe
             if (txtBoxNomClasse.Text != "")
             {
                 leFichier.Add(laStructure.CreateUsings());
-                leFichier.Add(laStructure.CreateRegion("Attributs"));
-                foreach(string element in cmbBoxListeVariables.Items)
-                {
-                    leFichier.Add("    "+element);
-                }
-                leFichier.Add(laStructure.CreateEndRegion());
-                leFichier.Add(laStructure.CreateRegion("Constructeur"));
+                leFichier.Add("public class " + txtBoxNomClasse.Text+"{ ");
+
+                leFichier.Add(laStructure.CreateAttributs());
                 leFichier.Add(laStructure.CreateConstructeur(lblNomClasseChoisi.Text));
-                leFichier.Add(laStructure.CreateEndRegion());
-                leFichier.Add(laStructure.CreateRegion("Getter Setter"));
+
+
+                leFichier.Add(laStructure.CreateRegion("Getter Setter \n\n"));
                 foreach (string element in cmbBoxListeGetterSetter.Items)
                 {
                     leFichier.Add("    " + element);
                 }
-                leFichier.Add(laStructure.CreateEndRegion());
-                leFichier.Add(laStructure.CreateRegion("Méthodes"));
+                leFichier.Add("\n" + laStructure.CreateEndRegion());
+                leFichier.Add(laStructure.CreateRegion("Méthodes \n\n"));
 
-                leFichier.Add(laStructure.CreateEndRegion());
-
+                leFichier.Add("\n" + laStructure.CreateEndRegion());
+                leFichier.Add("}");
 
 
 
                 Form2 leForm2 = new Form2(leFichier);
-                leForm2.ShowDialog();
+                leForm2.Show();
             }
             else
             {
