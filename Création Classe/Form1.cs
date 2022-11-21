@@ -76,7 +76,6 @@ namespace Création_Classe
                 
                 if (checkBoxList.Checked && cmbBoxListeType.SelectedItem != null)
                 {
-                    if(:)
                     ligneVar = "private " + laStructure.CreateList(nameVar, cmbBoxListeType.SelectedItem.ToString());
                     laStructure.CollVariables.Add(txtBoxNomAttribut.Text, "List<"+cmbBoxListeType.SelectedItem.ToString() +">");
 
@@ -96,6 +95,10 @@ namespace Création_Classe
                 if (checkBoxDictionnaire.Checked)
                 {
                     leGetterSetter = laStructure.CreateGetterSetter(txtBoxNomAttribut.Text, cmbBoxListeType.SelectedItem.ToString(), checkBoxGetter.Checked, checkBoxSetter.Checked, checkBoxList.Checked, checkBoxDictionnaire.Checked, cmbBoxDictionnaire.SelectedItem.ToString());
+                }
+                else if (checkBoxList.Checked)
+                {
+                    leGetterSetter = laStructure.CreateGetterSetter(txtBoxNomAttribut.Text, cmbBoxListeType.SelectedItem.ToString(), checkBoxGetter.Checked, checkBoxSetter.Checked, checkBoxList.Checked);
                 }
                 else
                 {

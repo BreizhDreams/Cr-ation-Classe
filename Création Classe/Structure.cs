@@ -57,17 +57,17 @@ namespace Création_Classe
             typeVar = getType(checkDico, checkList,typeVar, typeVar2);
             if (getter && setter)
             {
-                string getters_setter = "public " + typeVar + " " + CapitalizeFirstLetter(nameVar) + " { get => _" + nameVar + "; set => _" + nameVar + "= value; }";
+                string getters_setter = "public " + typeVar + " " + CapitalizeFirstLetter(nameVar) + " { get => _" + nameVar.ToLower() + "; set => _" + nameVar.ToLower() + "= value; }";
                 return getters_setter;
             }
             else if (getter && setter == false)
             {
-                string leGetter = "public " + typeVar + " " + CapitalizeFirstLetter(nameVar) + " { get => _" + nameVar + ";}";
+                string leGetter = "public " + typeVar + " " + CapitalizeFirstLetter(nameVar) + " { get => _" + nameVar.ToLower() + ";}";
                 return leGetter;
             }
             else if (setter && getter == false)
             {
-                string leSetter = "public " + typeVar + " " + CapitalizeFirstLetter(nameVar) + "{ set => _" + nameVar + "= value; }";
+                string leSetter = "public " + typeVar + " " + CapitalizeFirstLetter(nameVar) + "{ set => _" + nameVar.ToLower() + "= value; }";
                 return leSetter;
             }
             return null;
@@ -102,7 +102,7 @@ namespace Création_Classe
                 else
                 {
                     
-                    if (CollVariables[laVar.Key] == CollVariables.Values.Last())
+                    if (CollVariables[laVar.Key] == CollVariables.Values.Last() || CollVariables.Values.Last().Contains("List"))
                     {
                         param = param + laVar.Value + " " + laVar.Key;
                     }
@@ -126,7 +126,7 @@ namespace Création_Classe
                 "using System.Collections.Generic; \n" +
                 "using System.Linq;\n" +
                 "using System.Text;\n" +
-                "using System.Threding.Tasks; \n \n";
+                "using System.Threading.Tasks; \n \n";
             return usings;
         }
 
